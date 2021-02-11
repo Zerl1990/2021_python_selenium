@@ -1,8 +1,8 @@
 """Contact two lists."""
-
 list1 = ["Hello ", "take "]
 list2 = ["Dear", "Sir"]
 solution = []
+
 
 for f_item in list1:
     for s_item in list2:
