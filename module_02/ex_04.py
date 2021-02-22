@@ -11,10 +11,11 @@ dropdown = Select(element)
 
 print(f'Is multiple selection enabled: {dropdown.is_multiple}')
 
-dropdown.select_by_visible_text('Deals')
+dropdown.select_by_value('search-alias=deals-intl-ship')
 print(f'Current selection: {dropdown.first_selected_option.text}')
 
-dropdown.select_by_visible_text('Books')
+dropdown.select_by_value('search-alias=stripbooks-intl-ship')
 print(f'Current selection: {dropdown.first_selected_option.text}')
+
 
 driver.quit()
