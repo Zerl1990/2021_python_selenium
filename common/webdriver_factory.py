@@ -12,6 +12,10 @@ __FIREFOX_FILE_NAME = 'geckodriver'
 
 __WIN_EXTENSION = '.exe'
 
+print('-' * 80)
+print(__name__)
+print('-' * 80)
+
 
 def get_driver(browser_name: str):
     """Get a new instance of web driver.
@@ -54,3 +58,8 @@ def __get_driver_path(executable) -> Path:
     if system().lower() == 'windows':
         executable += __WIN_EXTENSION
     return root.joinpath(__DRIVER_DIR, executable)
+
+
+if __name__ == '__main__':
+    print('Running web driver factory')
+    driver = get_driver('chrome')

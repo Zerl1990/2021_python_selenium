@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 def login(wait: WebDriverWait, email: str, secret: str):
     """Login to pinterest"""
     # Open login dialog
-    login_btn_locator = (By.XPATH, "//*[@data-test-id='simple-login-button']//button")
+    login_btn_locator = (By.XPATH, "//*[@data-test-id='simple-login-button']/button")
     login_btn = wait.until(EC.element_to_be_clickable(login_btn_locator))
     login_btn.click()
 
@@ -27,7 +27,7 @@ def login(wait: WebDriverWait, email: str, secret: str):
     password.send_keys(secret)
 
     # Submit
-    submit_btn_locator = (By.XPATH, "//*[@data-test-id='registerFormSubmitButton']//button")
+    submit_btn_locator = (By.XPATH, "//*[@data-test-id='registerFormSubmitButton']/button")
     submit_btn = wait.until(EC.element_to_be_clickable(submit_btn_locator))
     submit_btn.click()
 

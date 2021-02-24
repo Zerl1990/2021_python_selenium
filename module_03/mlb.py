@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 def select_dropdown(wait: WebDriverWait, option: str):
     """Select dropdown from menu."""
-    locator = (By.XPATH, "//*[contains(@class, 'p-dropdown__standings')]")
+    locator = (By.XPATH, "//select[contains(@class, 'p-dropdown__standings')]")
     element = wait.until(EC.element_to_be_clickable(locator))
     dropdown = Select(element)
     dropdown.select_by_value(option)
@@ -17,14 +17,14 @@ def select_dropdown(wait: WebDriverWait, option: str):
 
 def select_standard(wait: WebDriverWait):
     """Select standard option."""
-    locator = (By.XPATH, "//*[@data-value='standard']")
+    locator = (By.XPATH, "//button[@data-value='standard']")
     element = wait.until(EC.element_to_be_clickable(locator))
     element.click()
 
 
 def select_advance(wait: WebDriverWait):
     """Select advance option."""
-    locator = (By.XPATH, "//*[@data-value='advanced']")
+    locator = (By.XPATH, "//button[@data-value='advanced']")
     element = wait.until(EC.element_to_be_clickable(locator))
     element.click()
 
@@ -65,6 +65,7 @@ if __name__ == '__main__':
     select_advance(my_wait)
 
     # Get team info
+    # [['team', '500'], [], [], [], [], [], []]
     teams = get_teams_info(my_wait)
     for team in teams:
         print(' | '.join(team))
