@@ -8,6 +8,7 @@ from module_05.sauce_func_lib.login import login
 VALID_PRICES = ['$29.99', '$9.99', '$15.99', '$49.99', '$7.99', '$15.99']
 
 
+# Input: user, password
 def test_inventory_size():
     driver = get_driver('chrome')
     wait = WebDriverWait(driver, 5)

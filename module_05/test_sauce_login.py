@@ -6,6 +6,7 @@ from common.webdriver_factory import get_driver
 from module_05.sauce_func_lib.inventory import get_inventory
 from module_05.sauce_func_lib.login import login, get_login_error
 
+
 LOGIN_DATA = [
     ('standard_user', 'secret_sauce'),
     ('performance_glitch_user', 'secret_sauce'),
@@ -14,9 +15,9 @@ LOGIN_DATA = [
 
 
 @pytest.mark.parametrize('user, password', LOGIN_DATA)
-def valid_user(user: str, password: str):
+def test_valid_user(user, password):
     driver = get_driver('chrome')
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 30)
     driver.get('https://www.saucedemo.com/')
     login(wait, user, password)
     items = get_inventory(wait)
@@ -27,7 +28,7 @@ def valid_user(user: str, password: str):
 _ERROR_MSG = 'Epic sadface: Username and password do not match any user in this service'
 
 
-def test_invalid_user():
+def invalid_user():
     driver = get_driver('chrome')
     wait = WebDriverWait(driver, 5)
     driver.get('https://www.saucedemo.com/')

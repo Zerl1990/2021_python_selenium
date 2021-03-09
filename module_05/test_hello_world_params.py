@@ -13,4 +13,3 @@ DATA = [
 def test_one(user, password):
     """Test case demo 1."""
     print(f'{user}-{password}')
-
