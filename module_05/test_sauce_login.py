@@ -28,7 +28,7 @@ def test_valid_user(user, password):
 _ERROR_MSG = 'Epic sadface: Username and password do not match any user in this service'
 
 
-def invalid_user():
+def test_invalid_user():
     driver = get_driver('chrome')
     wait = WebDriverWait(driver, 5)
     driver.get('https://www.saucedemo.com/')
