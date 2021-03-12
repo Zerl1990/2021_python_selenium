@@ -12,11 +12,11 @@ class BasePage:
     __MIN_TIMEOUT = 0
 
     """Base page for all page objects."""
-    def __init__(self, driver: WebDriver, url: str = None, timeout: int = 5):
+    def __init__(self, driver: WebDriver, url: str = None, timeout: int = 10):
         self._driver = driver
         self._url = url
-        self._timeout = timeout
         self._wait = WebDriverWait(self._driver, timeout)
+        self.timeout = timeout
 
     def open(self):
         """Open page in browser."""
@@ -39,7 +39,8 @@ class BasePage:
     @timeout.setter
     def timeout(self, value):
         """Get timeout for web driver wait."""
-        if value < self.__MIN_TIMEOUT or value > self.__MAX_TIMEOUT:
+        if value < BasePage.__MIN_TIMEOUT or value > BasePage.__MAX_TIMEOUT:
             raise ValueError(f'Invalid value for timeout: {value}')
         self._timeout = value
-        self._wait._timeout = self._timeout
+        if self._wait._timeout != value:
+            self._wait._timeout = value

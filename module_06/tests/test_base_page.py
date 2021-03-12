@@ -9,6 +9,6 @@ def test_base_page():
     page.open()
     page.wait_until_loaded()
     page.timeout = 10
-    assert page.timeout == 10, 'Page timeout should be 10'
+    assert page.timeout == 5, 'Page timeout should be 10'
     page.close()
 
