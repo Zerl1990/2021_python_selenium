@@ -1,5 +1,4 @@
 """Base page element"""
-from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,13 +8,13 @@ class BasePageElement:
     """Represents any input text element."""
     def __init__(self, loc: tuple, wait: WebDriverWait = None, root: WebElement = None):
         self._wait = wait
-        self._loc = loc
+        self._loc = loc  # tuple (By, Value)
         self._root = root
 
     def wait_until_loaded(self) -> WebElement:
         """Wait until page is loaded"""
         if self._root and isinstance(self._root, WebElement):
-            return self._root.find_element(*self._loc)
+            return self._root.find_element(*self._loc)  # (By, Value) -> find_element(by, value)
         elif self._wait and isinstance(self._wait, WebDriverWait):
             return self._wait.until(EC.element_to_be_clickable(self._loc))
         else:
