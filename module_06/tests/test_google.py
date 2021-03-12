@@ -1,6 +1,6 @@
 """Test google."""
 from common.webdriver_factory import get_driver
-from module_06.lib.pages.google import Google
+from module_06.src.pages.google import Google
 
 
 def test_google_search():

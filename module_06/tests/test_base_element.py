@@ -2,7 +2,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from common.webdriver_factory import get_driver
-from module_06.lib.elements.base_page_element import BasePageElement
+from module_06.src.elements.base_page_element import BasePageElement
 
 
 def test_page_without_root():

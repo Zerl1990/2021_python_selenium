@@ -1,6 +1,6 @@
 """Sauce lab login tests."""
 from common.webdriver_factory import get_driver
-from module_06.lib.pages.sauce_lab_login import SauceLabLogin
+from module_06.src.pages.sauce_lab_login import SauceLabLogin
 
 
 def test_sauce_lab_login():

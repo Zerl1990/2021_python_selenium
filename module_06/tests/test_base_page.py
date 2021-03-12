@@ -1,6 +1,6 @@
 """Test implementation of base page."""
 from common.webdriver_factory import get_driver
-from module_06.lib.pages.base_page import BasePage
+from module_06.src.pages.base_page import BasePage
 
 
 def test_base_page():
