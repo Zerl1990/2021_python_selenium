@@ -8,13 +8,13 @@ class BasePageElement:
     """Represents any input text element."""
     def __init__(self, loc: tuple, wait: WebDriverWait = None, root: WebElement = None):
         self._wait = wait
-        self._loc = loc  # tuple (By, Value)
+        self._loc = loc
         self._root = root
 
     def wait_until_loaded(self) -> WebElement:
         """Wait until page is loaded"""
         if self._root and isinstance(self._root, WebElement):
-            return self._root.find_element(*self._loc)  # (By, Value) -> find_element(by, value)
+            return self._root.find_element(*self._loc)
         elif self._wait and isinstance(self._wait, WebDriverWait):
             return self._wait.until(EC.element_to_be_clickable(self._loc))
         else:
