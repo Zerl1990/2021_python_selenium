@@ -1,4 +1,4 @@
-"""Base page element"""
+"""Select element."""
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,3 +14,4 @@ class SelectElement(BasePageElement):
         """Get instance of select."""
         element = self.wait_until_loaded()
         return Select(element)
+

@@ -27,3 +27,5 @@ class InventoryItems:
     def __iter__(self):
         self.reload()
         return iter(self.__elements)
+
+
