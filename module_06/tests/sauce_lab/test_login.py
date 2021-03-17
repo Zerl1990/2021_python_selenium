@@ -25,6 +25,7 @@ class TestLogin(TestBase):
         page.login(user, password)
 
     @pytest.mark.regression
+    @pytest.mark.login
     def test_invalid_user(self):
         page = LoginPage(self.driver)
         page.open()
