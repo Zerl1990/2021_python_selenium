@@ -8,4 +8,4 @@ def test_sauce_lab_login():
     page = LoginPage(driver)
     page.open()
     page.login('standard_user', 'secret_sauce')
-    driver.quit()
+    page.close()

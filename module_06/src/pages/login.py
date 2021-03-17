@@ -5,6 +5,7 @@ from module_06.src.locators.login import LoginPageLoc
 from module_06.src.pages.base_page import BasePage
 from module_06.src.pages.inventory import InventoryPage
 
+
 _URL = 'https://www.saucedemo.com/'
 
 
