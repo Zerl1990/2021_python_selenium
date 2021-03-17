@@ -8,7 +8,8 @@ def test_base_page():
     page = BasePage(driver, 'https://www.google.com/')
     page.open()
     page.wait_until_loaded()
-    page.timeout = 10
-    assert page.timeout == 5, 'Page timeout should be 10'
+    page.timeout = 5
+    assert page.timeout == 5, 'Page timeout should be 5'
     page.close()
+
 
