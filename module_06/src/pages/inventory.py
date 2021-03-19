@@ -35,8 +35,8 @@ class InventoryPage(BasePage):
 
     def sort_by(self, option: InventorySortOptions):
         """Sort by specified value"""
-        self.__sort_dropdown.get_select_instance().select_by_value(option.value)
+        self.__sort_dropdown.select_by_value(option.value)
 
     def get_sort_value(self) -> str:
         """Get select sort value."""
-        return self.__sort_dropdown.get_select_instance().first_selected_option.get_attribute('value')
+        return self.__sort_dropdown.get_selected_value()
