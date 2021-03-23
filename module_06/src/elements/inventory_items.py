@@ -28,4 +28,5 @@ class InventoryItems:
         self.reload()
         return iter(self.__elements)
 
-
+    def __len__(self):
+        return len(self.__elements)
